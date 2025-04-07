@@ -12,6 +12,7 @@ services:
       - "${HOST_PORT}:${MYSQL_PORT}"
     expose:
       - "${MYSQL_PORT}"
+    command: --max_allowed_packet=256M
     volumes:
       - mysql_data:/var/lib/mysql
     restart: unless-stopped
