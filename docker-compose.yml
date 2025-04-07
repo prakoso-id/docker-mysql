@@ -6,14 +6,14 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DB: ${MYSQL_DB}
+      MYSQL_DATABASE: ${MYSQL_DB}
       
     ports:
       - "${HOST_PORT}:${MYSQL_PORT}"
     expose:
       - "${MYSQL_PORT}"
     volumes:
-      - mysql_data:/var/lib/mysql/data
+      - mysql_data:/var/lib/mysql
     restart: unless-stopped
 
 volumes:
